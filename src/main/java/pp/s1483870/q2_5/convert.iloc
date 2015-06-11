@@ -1,0 +1,32 @@
+main:       in "Number? " => r_num          //get initial num param
+            in "Base? " => r_bas            //get initial bas param
+            loadI #end => r_ra              //fetch return address
+            push r_ra                       //push return address on the stack
+            push r_num                      //push first param on stack
+            push r_bas                      //push second param on stack
+            jumpI -> convert                //call to convert method
+convert:    pop => r_bas                    //get param base
+            pop => r_num                    //get param num
+            div r_num, r_bas => r_res       //calculate (num / base)
+            mult r_bas, r_res => r_out      //calculate (base * rest)
+            sub r_num, r_out => r_out       //calculate (num - base * rest)
+            out "Next digit: ", r_out       //output next digit
+if:         loadI 0 => r_cmp                //load 0 for comparison
+            cmp_EQ r_res, r_cmp => r_cmp    //(rest == 0)
+            cbr r_cmp -> then, else         //call correct subroutine
+then:       pop => r_ra                     //pop return address
+            loadI 1 => r_rv                 //hard coded 1 return
+            push r_rv                       //put rv on stack
+            jump -> r_ra                    //return to caller
+else:       loadI #else_r => r_ra           //fetch return address
+            push r_ra                       //push return address
+            push r_res                      //push rest as num param for function convert
+            push r_bas                      //push bas param
+            jumpI -> convert                //recursive convert call
+else_r:     pop => r_rv                     //get recursive call result
+            pop => r_ra                     //get the return address
+            addI r_rv, 1 => r_rv            //add one to the recursive call result
+            push r_rv                       //push the result on the stack
+            jump -> r_ra                    //return to caller
+end:        pop => r_rv                     //pop return value
+            out "Length: ", r_rv            //end
