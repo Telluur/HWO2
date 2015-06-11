@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by Rick on 11-6-2015.
  */
 public class IlocConvert {
-    private final static String FILE = "src/main/java/pp/s1483870/q2_5/convert.iloc";
+    private final static String FILE = "src/main/java/pp/s1483870/q2_5/test.iloc";
 
     public static void main(String[] args) {
         new IlocConvert().run();

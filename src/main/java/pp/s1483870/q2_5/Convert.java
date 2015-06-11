@@ -33,7 +33,7 @@ public class Convert {
         System.out.println(message + val);
     }
 
-    public static void test(int num, int base){
+    public static void test(int num, int base) {
         int rest = num / base;
         out("/ :", rest);
     }
