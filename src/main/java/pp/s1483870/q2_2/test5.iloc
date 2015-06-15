@@ -1,0 +1,15 @@
+label1: loadI 1 => r_1
+label2: cbr r_1 -> label4, label5
+label3: loadI 3 => r_1
+        loadI 4 => r_1
+        cbr r_1 -> label5, label4
+label4: nop
+        jumpI -> label3
+label5: loadI 8 => r_1
+        nop
+        loadI 10 => r_1
+        nop
+        cbr r_1 -> label6, label6
+label6: loadI 13 => r_1
+        loadI 14 => r_1
+        nop

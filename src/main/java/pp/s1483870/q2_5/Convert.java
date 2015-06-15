@@ -2,20 +2,13 @@ package pp.s1483870.q2_5;
 
 import java.util.Scanner;
 
-/**
- * Created by Rick on 11-6-2015.
- */
-
 public class Convert {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //int num = in(" Number ? ");
-        //int base = in(" Base ? ");
-        //out(" Length : ", convert(num, base));
-
-        int derp = 5 / 2;
-        System.out.println(derp);
+        int num = in(" Number ? ");
+        int base = in(" Base ? ");
+        out(" Length : ", convert(num, base));
     }
 
     public static int convert(int num, int base) {

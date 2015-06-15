@@ -1,0 +1,5 @@
+label1: loadI 1 => r_1
+        jumpI -> label4
+        loadI 3 => r_1 // unreachable and unlabelled
+        loadI 4 => r_1
+label4: nop

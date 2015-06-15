@@ -10,9 +10,6 @@ import pp.s1483870.iloc.parse.FormatException;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by Rick on 11-6-2015.
- */
 public class IlocConvert {
     private final static String FILE = "src/main/java/pp/s1483870/q2_5/convert.iloc";
 
